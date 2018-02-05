@@ -214,7 +214,7 @@ class MdToHtml {
 				output.push('<hr/>');
  			} else if (t.type === 'math_inline') {
 				const mathText = markdownIt.render('$' + t.content + '$');
-				output.push(mathText);
+				output.push(mathText.substring(3, mathText.length - 5));
  			} else if (t.type === 'math_block') {
 				const mathText = markdownIt.render('$$' + t.content + '$$');
 				output.push(mathText);
